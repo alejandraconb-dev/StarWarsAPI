@@ -23,7 +23,7 @@
 - Asegurese de que ConsultaPelicula use la URL correcta: https://swapi.py4e.com/api/films/.
 </br>
 
-💙 <strong>Alejandra Contreras</strong></br>
+💙 <strong>Alejandra Contreras</strong> :octocat: </br>
 <a href="https://www.linkedin.com/in/alejandraconb-dev/" target="_blank">
 </br>
 <img align="left"  src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
