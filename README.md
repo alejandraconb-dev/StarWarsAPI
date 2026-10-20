@@ -1,11 +1,13 @@
+<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.png" width="5000"> 
+
 ## 🖥️ Tecnologías Utilizadas:
 
 - Java.
-- Javascript
-- HTML/CSS
+- Javascript.
+- HTML/CSS.
 - JSON/GSON.
 - Postman.
-- Visual Studio Code
+- Visual Studio Code.
 - Eclipse IDE.
 
 ## 📦 Requisitos
