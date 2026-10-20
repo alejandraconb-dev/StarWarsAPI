@@ -3,12 +3,19 @@
 # 📌StarWarsAPI
 Aplicación web interactiva que permite consultar los datos de las películas de la saga de **Star Wars**.
 
+## 📎 Descripción del proyecto
+* Se implementa un servidor HTTP liviano (`HttpServer`) que procesa solicitudes, consume la API externa de Star Wars (SWAPI) mediante `HttpClient` y formatea la información usando **Gson**.
+* Sincroniza los números ingresados por el usuario (1 al 7) con los IDs reales correspondientes de la API externa.
+* * Uso de `localStorage` para mantener la información fija en pantalla ante recargas automáticas del entorno de desarrollo.
+
 ## 🖥️ Tecnologías Utilizadas:
 
-- Java.
-- Javascript.
+- Java (JDK 17+).
+- `com.sun.net.httpserver`
+- Javascript (Async/Await, Fetch API, LocalStorage).
 - HTML/CSS.
-- JSON/GSON.
+- JSON.
+- Google GSON.
 - Postman.
 - Visual Studio Code.
 - Eclipse IDE.
@@ -16,14 +23,15 @@ Aplicación web interactiva que permite consultar los datos de las películas de
 ## 📦 Requisitos
 
 - Java 8 o superior.
-- IDE: como IntelliJ o Eclipse.
+- IDE: como IntelliJ o Eclipse o editor de código: Visual Studio Code.
 - Bibliotecas usadas: java.net.http, com.fasterxml.jackson <!-- para JSON, si se usa -->
 
 ## ▶️ Cómo ejecutar
 
 - Clona o descarga el proyecto.
 - Compila las clases: javac *.java
-- Ejecuta la clase principal: java api.starwars.general.Principal
+- Ejecuta la clase principal **`ServidorStarWars.java`**. El servidor se iniciará localmente en el puerto `8080`.
+- Abre el archivo **`index.html`** con la extensión **Live Server** en VS Code.
 - Ingresa un número de película (1-7) cuando se solicite.
 
 ## ⚠️ Notas
