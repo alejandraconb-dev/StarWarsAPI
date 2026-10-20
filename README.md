@@ -1,8 +1,11 @@
 ## 🖥️ Tecnologías Utilizadas:
 
 - Java.
+- Javascript
+- HTML/CSS
 - JSON/GSON.
 - Postman.
+- Visual Studio Code
 - Eclipse IDE.
 
 ## 📦 Requisitos
