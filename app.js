@@ -51,7 +51,7 @@ btn.addEventListener('click', async (event) => {
         mostrarPelicula(data);
 
     } catch (err) {
-        errorDiv.textContent = "Error del Backend Java: " + err.message;
+        errorDiv.textContent = "Error: " + err.message;
         errorDiv.classList.remove('hidden');
     }
 });

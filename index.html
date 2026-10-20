@@ -2,29 +2,41 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Star Wars API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars API - Consulta</title>
+    <!-- Fuentes de Google para darle estilo futurista y limpio -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Star Wars</h1>
-        <p>Consultas de películas de Star Wars</p>
+        <header>
+            <h1>STAR WARS</h1>
+            <p>Archivo Central de Películas de la Galaxia</p>
+        </header>
 
         <div class="search-box">
-            <input type="number" id="numPelicula" min="1" max="6" placeholder="Número (1-6)">
-            <button id="btnConsultar">Consultar</button>
+            <label for="numPelicula">Ingrese el número de la película (1 al 6):</label>
+            <div class="input-group">
+                <input type="number" id="numPelicula" min="1" max="6" placeholder="Ej. 4">
+                <button id="btnConsultar">Consultar</button>
+            </div>
         </div>
 
-        <div id="resultado" class="hidden">
+        <!-- Tarjeta de resultado optimizada con clases limpias -->
+        <div id="resultado" class="result-card hidden">
             <h2 id="titulo"></h2>
-            <p><strong>Episodio:</strong> <span id="episodio"></span></p>
-            <p><strong>Director:</strong> <span id="director"></span></p>
-            <p><strong>Estreno:</strong> <span id="fecha"></span></p>
-            <div class="crawl" id="crawl"></div>
+            <div class="pelicula-info">
+                <p><strong>Episodio:</strong> <span id="episodio"></span></p>
+                <p><strong>Director:</strong> <span id="director"></span></p>
+                <p><strong>Estreno:</strong> <span id="fecha"></span></p>
+            </div>
+            <div class="opening-crawl" id="crawl"></div>
         </div>
         
-        <div id="error" class="error hidden"></div>
+        <div id="error" class="error-message hidden"></div>
     </div>
+    
     <script src="app.js"></script>
 </body>
 </html>
