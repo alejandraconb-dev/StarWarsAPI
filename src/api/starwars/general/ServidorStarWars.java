@@ -20,7 +20,7 @@ public class ServidorStarWars {
         servidor.setExecutor(null); // crea un ejecutor por defecto
         
         System.out.println("=========================================");
-        System.out.println("  BACKEND JAVA ACTIVO EN PUERTO " + puerto);
+        System.out.println("  BACKEND JAVA ACTIVO EN PUERTO <3 " + puerto);
         System.out.println("    Java + Gson + FileWriter");
         System.out.println("=========================================");
         servidor.start();
@@ -64,9 +64,12 @@ public class ServidorStarWars {
                 // 4. Java responde al Frontend con el JSON procesado
                 enviarRespuesta(intercambio, 200, jsonRespuesta);
 
-            } catch (Exception e) {
-                String errorJson = "{\"error\": \"No encontré esa película (Java Exception).\"}";
-                enviarRespuesta(intercambio, 404, errorJson);
+         } catch (Exception e) {
+                // IMPRIME EL ERROR REAL EN LA TERMINAL DE JAVA PARA VER QUÉ PASA
+                e.printStackTrace(); 
+                
+                String errorJson = "{\"error\": \"" + e.getMessage().replace("\"", "'") + "\"}";
+                enviarRespuesta(intercambio, 500, errorJson);
             }
         }
 
