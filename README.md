@@ -26,6 +26,7 @@ Aplicación web interactiva que permite consultar los datos de las películas de
 - Java 8 o superior.
 - IDE: como IntelliJ o Eclipse o editor de código: Visual Studio Code.
 - Bibliotecas usadas: java.net.http, com.google.gson.
+alejandraconb-dev
 
 ## ▶️ Cómo ejecutar
 
@@ -38,6 +39,8 @@ Aplicación web interactiva que permite consultar los datos de las películas de
 
 - Asegurese de que ConsultaPelicula use la URL correcta: https://swapi.py4e.com/api/films/.
 </br>
+
+<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.GIF" width="500">
 
 💙 <strong>Alejandra Contreras</strong> :octocat: </br>
 <a href="https://www.linkedin.com/in/alejandraconb-dev/" target="_blank">
