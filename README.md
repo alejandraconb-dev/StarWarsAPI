@@ -40,7 +40,7 @@ alejandraconb-dev
 - Asegurese de que ConsultaPelicula use la URL correcta: https://swapi.py4e.com/api/films/.
 </br>
 
-<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.GIF" width="500">
+<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.GIF" width="5000">
 
 💙 <strong>Alejandra Contreras</strong> :octocat: </br>
 <a href="https://www.linkedin.com/in/alejandraconb-dev/" target="_blank">
