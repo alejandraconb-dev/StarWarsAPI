@@ -1,4 +1,4 @@
-<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.png" width="2500"> 
+<img src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.png" width="950"> 
 
 ## 🖥️ Tecnologías Utilizadas:
 
