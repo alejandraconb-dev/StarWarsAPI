@@ -35,28 +35,46 @@ public class ServidorStarWars {
 
             // Obtener el parámetro 'numero' de la URL (ej: /api/pelicula?numero=1)
             String query = intercambio.getRequestURI().getQuery();
-            int numeroDePelicula = 1; // por defecto
+            int episodioInput = 1; // por defecto
             
             if (query != null && query.startsWith("numero=")) {
                 try {
-                    numeroDePelicula = Integer.parseInt(query.split("=")[1]);
+                    String valorParam = query.split("=")[1];
+                    episodioInput = Integer.parseInt(valorParam);
+                    
+                    // Validar el rango (1 al 7) en el servidor
+                    if (episodioInput < 1 || episodioInput > 7) {
+                        String errorJson = "{\"error\": \"Por favor, debe poner solo números y del 1 al 7.\"}";
+                        enviarRespuesta(intercambio, 400, errorJson);
+                        return;
+                    }
                 } catch (NumberFormatException e) {
-                    String errorJson = "{\"error\": \"Número de película inválido.\"}";
+                    String errorJson = "{\"error\": \"Por favor, debe poner solo números y del 1 al 7.\"}";
                     enviarRespuesta(intercambio, 400, errorJson);
                     return;
                 }
             }
 
             try {
-                // 1. Java consulta la API externa con HttpClient
+                // Mapear el número de episodio ingresado al ID real de la API de Star Wars
+                int idRealApi = episodioInput;
+                if (episodioInput == 1) idRealApi = 4;
+                else if (episodioInput == 2) idRealApi = 5;
+                else if (episodioInput == 3) idRealApi = 6;
+                else if (episodioInput == 4) idRealApi = 1;
+                else if (episodioInput == 5) idRealApi = 2;
+                else if (episodioInput == 6) idRealApi = 3;
+                else if (episodioInput == 7) idRealApi = 7;
+
+                // 1. Java consulta la API externa con el ID correcto
                 ConsultaPelicula consulta = new ConsultaPelicula();
-                Pelicula pelicula = consulta.buscaPelicula(numeroDePelicula);
+                Pelicula pelicula = consulta.buscaPelicula(idRealApi);
 
                 // 2. Java procesa y formatea el JSON con Gson
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
                 String jsonRespuesta = gson.toJson(pelicula);
 
-                // 3. Java guarda el archivo .json en el disco del servidor (GeneradorDeArchivo)
+                // 3. Java guarda el archivo .json en el disco del servidor
                 GeneradorDeArchivo generador = new GeneradorDeArchivo();
                 generador.guardarJson(pelicula);
                 System.out.println("[JAVA] Archivo JSON guardado en disco: " + pelicula.title() + ".json");
@@ -64,11 +82,10 @@ public class ServidorStarWars {
                 // 4. Java responde al Frontend con el JSON procesado
                 enviarRespuesta(intercambio, 200, jsonRespuesta);
 
-         } catch (Exception e) {
-                // IMPRIME EL ERROR REAL EN LA TERMINAL DE JAVA PARA VER QUÉ PASA
+            } catch (Exception e) {
                 e.printStackTrace(); 
-                
-                String errorJson = "{\"error\": \"" + e.getMessage().replace("\"", "'") + "\"}";
+                String mensajeError = e.getMessage() != null ? e.getMessage() : "Error desconocido";
+                String errorJson = "{\"error\": \"No encontré esa película (" + mensajeError.replace("\"", "'") + ").\"}";
                 enviarRespuesta(intercambio, 500, errorJson);
             }
         }

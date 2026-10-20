@@ -3,7 +3,6 @@ const input = document.getElementById('numPelicula');
 const resultadoDiv = document.getElementById('resultado');
 const errorDiv = document.getElementById('error');
 
-// Función para pintar los datos en la pantalla
 function mostrarPelicula(data) {
     document.getElementById('titulo').textContent = data.title;
     document.getElementById('episodio').textContent = data.episode_id;
@@ -13,7 +12,6 @@ function mostrarPelicula(data) {
     resultadoDiv.classList.remove('hidden');
 }
 
-// Al cargar la página, verificamos si hay una consulta previa guardada
 window.addEventListener('DOMContentLoaded', () => {
     const peliculaGuardada = localStorage.getItem('resultadoStarWars');
     if (peliculaGuardada) {
@@ -23,20 +21,29 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 btn.addEventListener('click', async (event) => {
-    event.preventDefault(); // Evita recargas por defecto
+    event.preventDefault();
 
-    const num = input.value;
+    const valorInput = input.value.trim();
     resultadoDiv.classList.add('hidden');
     errorDiv.classList.add('hidden');
 
-    if (!num) {
-        errorDiv.textContent = "Por favor, ingresa un número de película.";
+    // Validación 1: Verificar si está vacío o no es un número entero
+    if (valorInput === "" || isNaN(valorInput)) {
+        errorDiv.textContent = "Por favor, debe poner solo números y del 1 al 7.";
+        errorDiv.classList.remove('hidden');
+        return;
+    }
+
+    const num = parseInt(valorInput);
+
+    // Validación 2: Verificar el rango (1 al 7)
+    if (num < 1 || num > 7) {
+        errorDiv.textContent = "Por favor, debe poner solo números y del 1 al 7.";
         errorDiv.classList.remove('hidden');
         return;
     }
 
     try {
-        // Petición dirigida al servidor Java local
         const response = await fetch(`http://localhost:8080/api/pelicula?numero=${num}`);
         const data = await response.json();
 
@@ -44,14 +51,11 @@ btn.addEventListener('click', async (event) => {
             throw new Error(data.error);
         }
 
-        // Guardamos los datos en el navegador antes de que Live Server recargue
         localStorage.setItem('resultadoStarWars', JSON.stringify(data));
-
-        // Mostramos el resultado
         mostrarPelicula(data);
 
     } catch (err) {
-        errorDiv.textContent = "Error: " + err.message;
+        errorDiv.textContent = "Error del Backend Java: " + err.message;
         errorDiv.classList.remove('hidden');
     }
 });

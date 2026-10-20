@@ -19,7 +19,7 @@
 - Clona o descarga el proyecto.
 - Compila las clases: javac *.java
 - Ejecuta la clase principal: java api.starwars.general.Principal
-- Ingresa un número de película (1-6) cuando se solicite.
+- Ingresa un número de película (1-7) cuando se solicite.
 
 ## ⚠️ Notas
 
