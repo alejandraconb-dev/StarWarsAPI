@@ -1,5 +1,8 @@
 <img align="center" src="https://github.com/alejandraconb-dev/StarWarsAPI/blob/main/StarWarsAPI.png" width="750"> 
 
+# 📌StarWarsAPI
+Aplicación web interactiva que permite consultar los datos de las películas de la saga de **Star Wars**.
+
 ## 🖥️ Tecnologías Utilizadas:
 
 - Java.
