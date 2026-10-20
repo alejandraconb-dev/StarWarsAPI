@@ -4,10 +4,10 @@
 Aplicación web interactiva que permite consultar los datos de las películas de la saga de **Star Wars**.
 
 ## 📎 Descripción del proyecto
-* Se implementa un servidor HTTP liviano (`HttpServer`) que procesa solicitudes, consume la API externa de Star Wars (SWAPI) mediante `HttpClient` y formatea la información usando **Gson**.
-* **Persistencia Local en Servidor:** (Resguardo automático de datos): Genera automáticamente un archivo `.json` por cada consulta exitosa en el disco del servidor.
+* Se implementa un servidor HTTP liviano (`HttpServer`) que procesa solicitudes, consume la API externa de Star Wars (SWAPI) mediante `HttpClient` y formatea la información usando **GSON**.
+* **Persistencia Local en Servidor** (Resguardo automático de datos): Genera automáticamente un archivo `.json` por cada consulta exitosa en el disco del servidor.
 * **Mapeo de Episodios Inteligente:**: Sincroniza los números ingresados por el usuario (1 al 7) con los IDs reales correspondientes de la API externa.
-* * Uso de `localStorage` para mantener la información fija en pantalla ante recargas automáticas del entorno de desarrollo.
+* Uso de `localStorage` para mantener la información fija en pantalla ante recargas automáticas del entorno de desarrollo.
 
 ## 🖥️ Tecnologías Utilizadas:
 
