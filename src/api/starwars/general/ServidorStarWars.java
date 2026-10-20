@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
-public class Principal {
+public class ServidorStarWars {
     public static void main(String[] args) throws IOException {
         int puerto = 8080;
         HttpServer servidor = HttpServer.create(new InetSocketAddress(puerto), 0);
@@ -69,8 +69,6 @@ public class Principal {
                 enviarRespuesta(intercambio, 404, errorJson);
             }
         }
-
-        private void enviarRespuesta(HttpExchange intercambio, int codigoEstado, void* respuesta) throws IOException {} // (Método auxiliar abajo)
 
         private void enviarRespuesta(HttpExchange intercambio, int codigoEstado, String respuesta) throws IOException {
             byte[] bytes = respuesta.getBytes("UTF-8");

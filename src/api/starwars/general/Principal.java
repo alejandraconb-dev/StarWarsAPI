@@ -20,6 +20,8 @@ public class Principal {
            } catch (RuntimeException | IOException e){
                System.out.println(e.getMessage());
                System.out.println("Finalizando la aplicación.");
+               } finally {
+                   lectura.close();
            }
     }
 }
