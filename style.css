@@ -2,8 +2,13 @@
     --color-primaria: #0b0b0b;
     --color-secundaria: #0f0f0f;
     --color-terciaria: #ffe81f; 
-    --color-cuaternario: #121212;
+    --color-cuaternario: #181818;
     --color-quinario: #e0e0e0;
+    --color-senario: #121212;
+    --color-septenario: #222;
+    --color-octavario: #333;
+    --color-novenario: #ccc;
+    --color-decenario: #444;
     /*--color-hover:*/
 
 /* Estilos Generales */
@@ -27,10 +32,10 @@ body {
 .container {
     width: 100%;
     max-width: 650px;
-    background: var(--color-cuaternario);
+    background: var(--color-senario);
     padding: 30px;
     border-radius: 12px;
-    border: 1px solid #222;
+    border: 1px solid var(--color-septenario);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
 }
 
@@ -54,10 +59,10 @@ header p {
 
 /* Caja de Búsqueda */
 .search-box {
-    background: #181818;
+    background: var(--color-cuaternario);
     padding: 25px;
     border-radius: 10px;
-    border: 1px solid #333;
+    border: 1px solid var(--color-octavario);
     box-shadow: inset 0 2px 5px rgba(0,0,0,0.5);
     margin-bottom: 25px;
 }
@@ -66,7 +71,7 @@ header p {
     display: block;
     margin-bottom: 12px;
     font-size: 1rem;
-    color: #ccc;
+    color: var(--color-novenario);
     font-weight: 500;
 }
 
@@ -79,7 +84,7 @@ input[type="number"] {
     flex: 1;
     padding: 12px 15px;
     background: var(--color-secundaria);
-    border: 1px solid #444;
+    border: 1px solid var(--color-decenario);
     border-radius: 6px;
     color: #fff;
     font-size: 1rem;
@@ -114,7 +119,7 @@ button:active {
 
 /* Tarjeta de Resultados */
 .result-card {
-    background: #181818;
+    background: var(--color-cuaternario);
     padding: 25px;
     border-radius: 10px;
     border: 1px solid var(--color-terciaria);
@@ -127,7 +132,7 @@ button:active {
     color: var(--color-terciaria);
     margin-bottom: 18px;
     font-size: 1.4rem;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid var(--color-octavario);
     padding-bottom: 10px;
 }
 
