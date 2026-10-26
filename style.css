@@ -9,7 +9,10 @@
     --color-octavario: #333;
     --color-novenario: #ccc;
     --color-decenario: #444;
-    /*--color-hover:*/
+    --color-hover: #d4be14;
+
+    --fuente-roboto: 'Roboto', sans-serif;
+    --fuente-orbitron: 'Orbitron', sans-serif; 
 }
 
 /* Estilos Generales */
@@ -22,7 +25,7 @@
 body {
     background-color: var(--color-primaria);
     color: var(--color-quinario);
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--fuente-roboto);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +49,7 @@ header {
 }
 
 header h1 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--fuente-orbitron);
     color: var(--color-terciaria); /* Amarillo clásico de Star Wars */
     font-size: 2.3rem;
     letter-spacing: 3px;
@@ -111,7 +114,7 @@ button {
 }
 
 button:hover {
-    background-color: #d4be14;
+    background-color: var(--color-hover);
 }
 
 button:active {
@@ -129,7 +132,7 @@ button:active {
 }
 
 .result-card h2 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--fuente-orbitron);
     color: var(--color-terciaria);
     margin-bottom: 18px;
     font-size: 1.4rem;
